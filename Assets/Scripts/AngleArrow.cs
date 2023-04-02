@@ -5,13 +5,25 @@ using UnityEngine;
 public class AngleArrow : MonoBehaviour
 {
     public GameObject playerCenter;
+    public GameObject projectilePrefab;
+    [SerializeField] Transform projectileSpawnPos;
     public float rotateSpeed = 10.0f;
+
+    public float launchPower = 0;
+    private float timeStep = 0.05f;
+    private int stepCount = 15;
+    private float launchDirection;
+
+
+    private Vector2 velocity = 10;
+
     
 
     // Start is called before the first frame update
     void Start()
     {
         playerCenter = GameObject.Find("Player1");
+        
     }
 
     // Update is called once per frame
@@ -19,7 +31,26 @@ public class AngleArrow : MonoBehaviour
     {
         float playerInput = Input.GetAxis("Vertical");
         transform.Rotate(Vector3.forward, playerInput * rotateSpeed);
+        if (Input.GetKeyDown("z") && launchPower > 0)
+        {
+            launchPower -= 5;
+        }
+        if (Input.GetKeyDown("x") && launchPower < 100)
+        {
+            launchPower += 5;
+        }
+        if (Input.GetKeyDown("space"))
+        {
+            FireProjectile();
+        }
 
         
+    }
+    void FireProjectile()
+    {
+        GameObject pr = Instantiate(projectilePrefab, projectileSpawnPos.position, Quaternion.identity);
+        
+        pr.GetComponent<Rigidbody2D>().velocity = velocity;
+
     }
 }

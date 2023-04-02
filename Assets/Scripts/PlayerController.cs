@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D playerRb;
     public float speed = 15.0f;
+
+    public GameObject projectilePrefab;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
