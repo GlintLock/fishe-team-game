@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Projectile.prefab.meta
 guid: 41e8f6aa0a01b0843becc248b91b6773
 PrefabImporter:
+========
+guid: af25de6faae908d488fbad695cccc5a1
+NativeFormatImporter:
+>>>>>>>> 1ecbe7bb4b6f97f851f7d7a80d92038e47a8b06e:Assets/Materials/New Material 1.mat.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

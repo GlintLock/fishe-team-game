@@ -15,14 +15,14 @@ public class AngleArrow : MonoBehaviour
     private float launchDirection;
 
 
-    private Vector2 velocity = 10;
+    private Vector2 velocity;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCenter = GameObject.Find("Player1");
+        playerCenter = GameObject.Find("Player2");
         
     }
 
